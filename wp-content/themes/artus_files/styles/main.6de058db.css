@@ -4075,6 +4075,10 @@ tbody.collapse.in {
   max-width: none;
 }
 
+.nav-bar {
+	text-align: center;
+}
+
 .nav-tabs {
   border-bottom: 1px solid #ddd;
 }
@@ -6766,7 +6770,6 @@ nav {
 @media (min-width:768px) {
   ol.breadcrumb,ul.nav.nav-tabs {
     display: inline-block;
-    min-width: 100%;
   }
 
   .navbar .navbar-nav {
