@@ -3,15 +3,27 @@
 $templateDir = get_bloginfo('template_directory').'/'; 
 
 
+//Home page
 $home_intro = get_field("home_intro");
 
+$home_slide_image_1 = get_field("home_slide_image_1");
+$home_slide_image_2 = get_field("home_slide_image_2");
+$home_slide_image_3 = get_field("home_slide_image_3");
+$home_slide_image_4 = get_field("home_slide_image_4");
+
+//About Us
 $about_treatment = get_field("about_treatment");
 
 $about_therapists = get_field("about_therapists");
 
 $about_space = get_field("about_space");
 
-$condition_back = get_field("condition_back");
+
+
+//Conditions Treated 
+$conditions_treated_intro = get_field("conditions_treated_intro");
+
+$condition_back = get_field("condition_back"); 
 
 $condition_neck = get_field("condition_back");
 
@@ -24,6 +36,49 @@ $condition_hip = get_field("condition_hip");
 $condition_knee = get_field("condition_knee");
 
 $condition_foot = get_field("condition_foot");
+
+
+//Hand therapy
+$hand_therapy_intro = get_field("hand_therapy_intro");
+
+$hand_therapy_cert_logo = get_field("hand_therapy_cert_logo");
+
+$hand_therapy_main_image = get_field("hand_therapy_main_image");
+
+$hand_therapy_text_left = get_field("hand_therapy_text_left");
+
+$hand_therapy_text_right = get_field("hand_therapy_text_right");
+
+$hand_therapy_society_logo = get_field("hand_therapy_society_logo");
+
+
+//Insurance page
+$insurance_text_left = get_field("insurance_text_left");
+
+$insurance_text_right = get_field("insurance_text_right");
+
+
+//First Visit
+$first_visit_text = get_field("first_visit_text");
+
+$first_visit_image = get_field("first_visit_image");
+
+$location_text = get_field("location_text");
+
+
+//header & footer fields
+
+$footer_address = get_field("location_text");
+
+$footer_social_media = get_field("footer_social_media");
+
+$footer_contact_us = get_field("footer_contact_us");
+
+$header_hours = get_field("header_hours");
+
+$header_phone = get_field("header_phone");
+
+$header_email = get_field("header_email");
 
 
 ?>
@@ -80,10 +135,10 @@ $condition_foot = get_field("condition_foot");
 		</div>
 	</div>
 	<div class="container">
-		<div class=row>
-			<div class=top-logo>
-				<div class=text-center>
-					<img class="img-responsive img-center" id=logo src="<?php echo $templateDir ?>images/logo4.8b15c980.png">
+		<div class="row">
+			<div class="top-logo">
+				<div class="text-center">
+					<img class="img-responsive img-center" id="logo" src="<?php echo $templateDir ?>images/logo4.8b15c980.png">
 				</div>
 			</div>
 		</div>
@@ -190,7 +245,8 @@ $condition_foot = get_field("condition_foot");
 																																						<img class="img-rounded img-responsive img-center mug" src="<?php echo $templateDir ?>images/charles.bb41bd1b.jpg">
 																																					</div>
 												<div class=bio>
-																																						<strong>Charles Polit, DPT, CHT</strong> graduated with his doctorate in physical therapy from Columbia University in 2004.  He has more than ten years experience in orthopedic physical therapy, holding the management position of clinical director for most of that time.  Dr. Polit received his certification in hand therapy six years ago and specializes in hand and upper extremity disorders.  He is an avid runner, swimmer, and neophyte golfer. </div>
+																																						<strong>Charles Polit, DPT, CHT</strong> graduated with his doctorate in physical therapy from Columbia University in 2004.  He has more than ten years experience in orthopedic physical therapy, holding the management position of clinical director for most of that time.  Dr. Polit received his certification in hand therapy six years ago and specializes in hand and upper extremity disorders.  He is an avid runner, swimmer, and neophyte golfer. 
+																																						</div>
 																								</div>
 																							</div>
 																							<div class="about clearfix about-space tab-pane" role=tabpanel id=space>
@@ -444,9 +500,10 @@ $condition_foot = get_field("condition_foot");
 																																																		<div class=container>
 																																																			<div class=row>
 																																																				<div class="col-md-3 col-sm-6">
-																																																					<h4>Our Address</h4>
+																												<?php echo $footer_address ?>																					<h4>Our Address</h4>
+																																																					
 																																																					<div class="address plain-link"> 117 W 72nd Street 2nd Fl. 
-																																																						<br> New York, NY 11023 
+																																												<br> New York, NY 11023 
 																																																							<br>
 																																																								<div class=plain-link>
 																																																									<a href=#location id=map-directions>Map & Directions</a>
@@ -455,10 +512,10 @@ $condition_foot = get_field("condition_foot");
 																																																						</div>
 																																																						<div class="col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
 																																																							<div class="visible-xs top-pad-20"></div>
-																																																							<h4>Follow us on Social Media</h4>
-																																																							<div class=footer-icon-container>
+																																																							<h4><?php echo $footer_social_media ?></h4>
+						<div class=footer-icon-container>
 																																																								<a href=https://facebook.com/artuspt alt=Facebook target=blank>
-																																																									<span class=footer-icons>
+							<span class=footer-icons>
 																																																										<i class="fa fa-facebook"></i>
 																																																									</span>
 																																																								</a>
@@ -470,8 +527,8 @@ $condition_foot = get_field("condition_foot");
 																																																									</span>
 																																																								</a>
 																																																							</div>
-																																																							<!-- <div class="footer-icon-container"><a href="https://www.google.com/maps/place/Artus+Physical+Therapy/@40.7269845,-73.0818468,15z/data=!3m1!4b1" alt="Google+" target="blank"><span class="footer-icons"><i class="fa fa-google-plus"></i></span></a></div> -->
-																																																							<div class=footer-icon-container>
+																																			
+																																			<div class=footer-icon-container>
 																																																								<a href=https://www.linkedin.com/in/artus-physical-therapy-52786b90 alt=linked-in target=blank>
 																																																									<span class=footer-icons>
 																																																										<i class="fa fa-linkedin"></i>
@@ -497,8 +554,8 @@ $condition_foot = get_field("condition_foot");
 																																																								</div>
 																																																								<div>
 																																																									<a href=mailto:info@artuspt.com>
-																																																										<i class="glyphicon glyphicon-envelope"></i> Email Us
-																																																									</a>
+								<i class="glyphicon glyphicon-envelope"></i> Email Us
+							</a>
 																																																								</div>
 																																																							</div>
 																																																						</div>
