@@ -57,14 +57,14 @@ $about_space_image_4 = get_field("about_space_image_4");
 $about_space_image_1_url = $about_space_image_1['url'];
 $about_space_image_1_alt = $about_space_image_1['alt'];
 
-$about_space_image_1_url = $about_space_image_1['url'];
-$about_space_image_1_alt = $about_space_image_1['alt'];
+$about_space_image_2_url = $about_space_image_2['url'];
+$about_space_image_2_alt = $about_space_image_2['alt'];
 
-$about_space_image_1_url = $about_space_image_1['url'];
-$about_space_image_1_alt = $about_space_image_1['alt'];
+$about_space_image_3_url = $about_space_image_3['url'];
+$about_space_image_3_alt = $about_space_image_3['alt'];
 
-$about_space_image_1_url = $about_space_image_1['url'];
-$about_space_image_1_alt = $about_space_image_1['alt'];
+$about_space_image_4_url = $about_space_image_4['url'];
+$about_space_image_4_alt = $about_space_image_4['alt'];
 
 
 //Conditions Treated 
@@ -72,7 +72,7 @@ $conditions_treated_intro = get_field("conditions_treated_intro");
 
 $condition_back = get_field("condition_back"); 
 
-$condition_neck = get_field("condition_back");
+$condition_neck = get_field("condition_neck");
 
 $condition_shoulder = get_field("condition_shoulder");
 
@@ -120,14 +120,15 @@ $hand_therapy_main_image = get_field("hand_therapy_main_image");
 
 $hand_therapy_society_logo = get_field("hand_therapy_society_logo");
 
-$hand_therapy_cert_logo = $hand_therapy_cert_logo['url'];
-$hand_therapy_cert_logo = $hand_therapy_cert_logo['alt'];
 
-$hand_therapy_main_image = $hand_therapy_main_image['url'];
-$hand_therapy_main_image = $hand_therapy_main_image['alt'];
+$hand_therapy_cert_logo_url = $hand_therapy_cert_logo['url'];
+$hand_therapy_cert_logo_alt = $hand_therapy_cert_logo['alt'];
 
-$hand_therapy_society_logo = $hand_therapy_society_logo['url'];
-$hand_therapy_society_logo = $hand_therapy_society_logo['alt'];
+$hand_therapy_main_image_url = $hand_therapy_main_image['url'];
+$hand_therapy_main_image_alt = $hand_therapy_main_image['alt'];
+
+$hand_therapy_society_logo_url = $hand_therapy_society_logo['url'];
+$hand_therapy_society_logo_alt = $hand_therapy_society_logo['alt'];
 
 
 //Insurance page
@@ -304,22 +305,24 @@ $header_email = get_field("header_email");
 									<?php echo $about_treatment ?>
 								</div>
 								<div class=col-md-6>
-									<img class=img-responsive src=<?php echo $templateDir ?>images/chick.e7c57116.jpg alt="space">
+									<img class=img-responsive src="<?php echo $about_treatment_image_url ?>" alt="<?php echo $about_treatment_image_alt ?>">
 								</div>
 							</div>
 							<div class="tab-pane about bios clearfix" role=tabpanel id=therapists>
 								<div class="bios-wrapper col-md-6" id=bio-1>
-									<div class="mug-container bio text-center">
-										<img class="img-rounded img-responsive img-center mug" src="<?php echo $templateDir ?>images/chris.6619b9cd.jpg">
-																											</div>
+								
+	<div class="mug-container bio text-center">
+		<img class="img-rounded img-responsive img-center mug" src="<?php echo $about_therapist_profile_1_url ?>" alt="<?php echo $about_therapist_profile_1_alt ?>">
+	</div>
+	
 	<div class=bio>
 		<?php echo $about_therapist_text_1 ?>
 	</div>
 	</div>
 	<div class="bios-wrapper col-md-6" id=bio-2>
 	<div class="mug-container text-center">
-	<img class="img-rounded img-responsive img-center mug" src="<?php echo $templateDir ?>images/charles.bb41bd1b.jpg">
-	</div>
+		<img class="img-rounded img-responsive img-center mug"  src="<?php echo $about_therapist_profile_2_url ?>" alt="<?php echo $about_therapist_profile_2_alt ?>">
+	</div>  
 
 	<div class=bio>
 		<?php echo $about_therapist_text_2 ?>
@@ -329,24 +332,24 @@ $header_email = get_field("header_email");
 
 	<div class="about clearfix about-space tab-pane" role=tabpanel id=space>
 	   <div class=col-md-5>
-			<img class=img-responsive src=<?php echo $templateDir ?>images/space1.1f1c89e3.jpg alt="space">
-	   </div>
+			<img class=img-responsive src="<?php echo $about_space_image_1_url ?>" alt="<?php echo $about_space_image_1_alt ?>">
+	   </div>	
 	   <div class=col-md-7>
 			<?php echo $about_space ?>
 	   </div>
 	   <div class=row>
 		  <div class=col-md-12>
 			 <span class=col-xs-6>
-			 <img class="img-responsive pic-two-up" src="<?php echo $templateDir ?>images/space2.091126db.jpg">
+			 <img class="img-responsive pic-two-up" src="<?php echo $about_space_image_2_url ?>" alt="<?php echo $about_space_image_2_alt ?>">
 			 </span>
 			 <span class=col-xs-6>
-			 <img class="img-responsive pic-two-up" src=<?php echo $templateDir ?>images/space3.084de20b.jpg>
+			 <img class="img-responsive pic-two-up" src="<?php echo $about_space_image_3_url ?>" alt="<?php echo $about_space_image_3_alt ?>">
 			 </span>
 		  </div>
 	   </div>
 	   <div class="col-xs-12 col-xs-offset-0">
 		  <div class="top-pad-20 visible-sm visible-xs"></div>
-		  <img class="img-responsive pic-two-up" src=<?php echo $templateDir ?>images/treadmills.7466924d.jpg alt="space">
+		  <center><img class="img-responsive pic-two-up" src="<?php echo $about_space_image_4_url ?>" alt="<?php echo $about_space_image_4_alt ?>"></center>
 	   </div>
 	</div>
 	<div class="about clearfix testimonials tab-pane" role=tabpanel id=testimonials>
@@ -384,25 +387,25 @@ $header_email = get_field("header_email");
 <div class="jumbotron conditions-head">
 	<div class=pic-icons>
 	<span>
-		<img data-hover-target=load_back id=backpain-pic class="pic-icon img-circle" src="<?php echo $templateDir ?>images/backpain.03bebda1.jpg">
+		<img data-hover-target=load_back id=backpain-pic class="pic-icon img-circle" src="<?php echo $condition_back_url ?>" alt="<?php echo $condition_back_alt ?>">
 	</span>
 	<span>
-		<img data-hover-target=load_neck id=neckpain-pic class="pic-icon img-circle" src="<?php echo $templateDir ?>images/neckpain.993e0f80.jpg">
+		<img data-hover-target=load_neck id=neckpain-pic class="pic-icon img-circle" src="<?php echo $condition_neck_url ?>" alt="<?php echo $condition_neck_alt ?>">
 	</span>
 	<span>
-		<img data-hover-target=load_shoulder id=sholderpain-pic class="pic-icon img-circle" src="<?php echo $templateDir ?>images/shoulderpain.a0819bec.jpg"></span>
-
-	<span>
-	<img data-hover-target=load_elbow id=elbow-pic class="pic-icon img-circle" src="<?php echo $templateDir ?>images/elbow.3454c295.jpg">
+		<img data-hover-target=load_shoulder id=sholderpain-pic class="pic-icon img-circle" src="<?php echo $condition_shoulder_url ?>" alt="<?php echo $condition_shoulder_url ?>">
 	</span>
 	<span>
-	<img data-hover-target=load_hip id=hippain-pic class="pic-icon img-circle" src="<?php echo $templateDir ?>images/hippain.62c0a372.jpg">
+		<img data-hover-target=load_elbow id=elbow-pic class="pic-icon img-circle" src="<?php echo $condition_elbow_url ?>" alt="<?php echo $condition_elbow_url ?>">
 	</span>
 	<span>
-	<img data-hover-target=load_knee id=kneepain-pic class="pic-icon img-circle" src="<?php echo $templateDir ?>images/kneepain.0b0b3f54.jpg">
+		<img data-hover-target=load_hip id=hippain-pic class="pic-icon img-circle" src="<?php echo $condition_hip_url ?>" alt="<?php echo $condition_hip_url ?>">
 	</span>
 	<span>
-	<img data-hover-target=load_foot id=foot-pic class="pic-icon img-circle" src="<?php echo $templateDir ?>images/foot.0dfa52a9.jpg">
+		<img data-hover-target=load_knee id=kneepain-pic class="pic-icon img-circle" src="<?php echo $condition_knee_url ?>" alt="<?php echo $condition_knee_url ?>">
+	</span>
+	<span>
+		<img data-hover-target=load_foot id=foot-pic class="pic-icon img-circle" src="<?php echo $condition_foot_url ?>" alt="<?php echo $condition_foot_url ?>">
 	</span>
 	</div>
 
@@ -441,8 +444,7 @@ $header_email = get_field("header_email");
 </div>
 </div>
 <div>
-   <br>
-   <br>
+   <br /><br />
 </div>
 <div class="jumbotron page-section hidden clearfix" id=hands-page>
 	<div class=hands-page-background></div>
@@ -452,14 +454,12 @@ $header_email = get_field("header_email");
 
 	</div>
 	<div class=col-md-3>
-	   <br>
-	   <br>
-	   <img class="img-responsive img-center" src="<?php echo $templateDir ?>images/cht.19c5472e.png" alt="cbt">
-	   <br>
-	   <br>
+	   <br /><br />
+	   <img class="img-responsive img-center" src="<?php echo $hand_therapy_cert_logo_url ?>" alt="<?php echo $hand_therapy_cert_logo_alt ?>">
+	   <br /><br />
 	</div>
 	<div class=col-md-12>
-	   <img class="img-responsive img-center" src=<?php echo $templateDir ?>images/hand-big.02a881bd.jpg alt="hands">
+	   <img class="img-responsive img-center" src="<?php echo $hand_therapy_main_image_url ?>" alt="<?php echo $hand_therapy_main_image_alt ?>">
 	</div>
 	<div class=col-md-6>
 		<?php echo $hand_therapy_text_left ?>
@@ -471,9 +471,11 @@ $header_email = get_field("header_email");
 	</div>																
 
 	<div class=col-md-12>
-		<img id=asht-logo class=img-responsive src=<?php echo $templateDir ?>images/asht-logo.e15bfc32.jpg alt="asht-logo">
+		<img id=asht-logo class=img-responsive src="<?php echo $hand_therapy_society_logo_url ?>" alt="<?php echo $hand_therapy_society_logo_alt ?>">
+		
 	</div>
 </div>
+
 <div class="jumbotron page-section clearfix hidden insurance-div" id=insurance-page>
 	<div class=col-md-6>
    
@@ -486,6 +488,7 @@ $header_email = get_field("header_email");
 
 	</div>
 </div>
+
 <div class="jumbotron page-section hidden clearfix" id=first-page>
    <div class=first-page-background></div>
    <div class=col-xs-12>
@@ -494,10 +497,11 @@ $header_email = get_field("header_email");
    <div class=col-md-7>
 		<?php echo $first_visit_text ?>
    </div>
-   <div class=col-md-5>
-      <img class=img-responsive src=<?php echo $templateDir ?>images/intake.7bff528a.jpg alt="intake">
+   <div class=col-md-5>  
+      <img class=img-responsive src="<?php echo $first_visit_image_url ?>" alt="<?php echo $first_visit_image_alt ?>">
    </div>
 </div>
+
 </div>
 </div>
 <footer class=scut-sticky-footer>
