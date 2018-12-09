@@ -176,8 +176,31 @@ $header_email = get_field("header_email");
 	<link rel="shortcut icon" href="<?php echo $templateDir ?>images/favicon.4f5fd530.ico" />
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel=stylesheet href="<?php echo $templateDir ?>styles/main.6de058db.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<script>
+	$(document).ready(function() {
+		$(".cond-div > div").hide();		
+		$(".cond-loader").click(function () {
+
+			$condID = $(this).attr('id');			
+			$divID = $condID + '-content'; //slide content
+			
+			$(".cond-div > div").hide();
+			$('#conditions_treated_intro').hide();
+			
+			//toggle the slide- if visible, slide up, if not slidedown.
+			$('#'+$divID).slideToggle(500, function () {
+				console.log($divID);
+			});
+		});
+	});
+	</script>
 </head>
 <body>
+
 	<!--[if lt IE 10]>
 	<p class="browsehappy">You are using an 
 		<strong>outdated</strong> browser. Please 
@@ -361,57 +384,274 @@ $header_email = get_field("header_email");
 <div class="nav-bar">
    <ul class="nav nav-tabs conditions-list list-inline" id=conditions-loader-list>
       <li>
-         <a class=conditions-loader href=#loader data-hover-target=backpain-pic id=load_back>Back</a>
+         <a class="cond-loader" id="cond-back" href=#loader data-hover-target=backpain-pic id=load_back>Back</a>
       </li>
       <li>
-         <a class=conditions-loader href=#loader data-hover-target=neckpain-pic id=load_neck>Neck/Head</a>
+		<a class="cond-loader" id="cond-neck" href=#loader data-hover-target=neckpain-pic id=load_neck>Neck/Head</a>
       </li>
       <li>
-         <a class=conditions-loader href=#loader data-hover-target=sholderpain-pic id=load_shoulder>Shoulder</a>
+         <a class="cond-loader" id="cond-shoulder" href=#loader data-hover-target=sholderpain-pic id=load_shoulder>Shoulder</a>
       </li>
       <li>
-         <a class=conditions-loader href=#loader data-hover-target=elbow-pic id=load_elbow>Elbow/Wrist/Hand</a>
+         <a class="cond-loader" id="cond-elbow" href=#loader data-hover-target=elbow-pic id=load_elbow>Elbow/Wrist/Hand</a>
       </li>
       <li>
-         <a class=conditions-loader href=#loader data-hover-target=hippain-pic id=load_hip>Hip</a>
+         <a class="cond-loader" id="cond-hip" href=#loader data-hover-target=hippain-pic id=load_hip>Hip</a>
       </li>
       <li>
-         <a class=conditions-loader href=#loader data-hover-target=kneepain-pic id=load_knee>Knee</a>
+         <a class="cond-loader" id="cond-knee" href=#loader data-hover-target=kneepain-pic id=load_knee>Knee</a>
       </li>
       <li>
-         <a class=conditions-loader href=#loader data-hover-target=foot-pic id=load_foot>Foot</a>
+         <a class="cond-loader" id="cond-foot" href=#loader data-hover-target=foot-pic id=load_foot>Foot</a>
       </li>
    </ul>
 </div>
 
 <div class="jumbotron conditions-head">
-	<div class=pic-icons>
-	<span>
-		<img data-hover-target=load_back id=backpain-pic class="pic-icon img-circle" src="<?php echo $condition_back_url ?>" alt="<?php echo $condition_back_alt ?>">
+	<div class="pic-icons">
+	<span class="cond-loader" id="cond-back">
+		<img id="backpain-pic" class="pic-icon img-circle" src="<?php echo $condition_back_url ?>" alt="<?php echo $condition_back_alt ?>">
 	</span>
-	<span>
-		<img data-hover-target=load_neck id=neckpain-pic class="pic-icon img-circle" src="<?php echo $condition_neck_url ?>" alt="<?php echo $condition_neck_alt ?>">
+	<span class="cond-loader" id="cond-neck">
+		<img id=neckpain-pic class="pic-icon img-circle" src="<?php echo $condition_neck_url ?>" alt="<?php echo $condition_neck_alt ?>">
 	</span>
-	<span>
-		<img data-hover-target=load_shoulder id=sholderpain-pic class="pic-icon img-circle" src="<?php echo $condition_shoulder_url ?>" alt="<?php echo $condition_shoulder_url ?>">
+	<span class="cond-loader" id="cond-shoulder">
+		<img id=sholderpain-pic class="pic-icon img-circle" src="<?php echo $condition_shoulder_url ?>" alt="<?php echo $condition_shoulder_url ?>">
 	</span>
-	<span>
-		<img data-hover-target=load_elbow id=elbow-pic class="pic-icon img-circle" src="<?php echo $condition_elbow_url ?>" alt="<?php echo $condition_elbow_url ?>">
+	<span class="cond-loader" id="cond-elbow">
+		<img id=elbow-pic class="pic-icon img-circle" src="<?php echo $condition_elbow_url ?>" alt="<?php echo $condition_elbow_url ?>">
 	</span>
-	<span>
-		<img data-hover-target=load_hip id=hippain-pic class="pic-icon img-circle" src="<?php echo $condition_hip_url ?>" alt="<?php echo $condition_hip_url ?>">
+	<span class="cond-loader" id="cond-hip">
+		<img id=hippain-pic class="pic-icon img-circle" src="<?php echo $condition_hip_url ?>" alt="<?php echo $condition_hip_url ?>">
 	</span>
-	<span>
-		<img data-hover-target=load_knee id=kneepain-pic class="pic-icon img-circle" src="<?php echo $condition_knee_url ?>" alt="<?php echo $condition_knee_url ?>">
+	<span class="cond-loader" id="cond-knee">
+		<img id=kneepain-pic class="pic-icon img-circle" src="<?php echo $condition_knee_url ?>" alt="<?php echo $condition_knee_url ?>">
 	</span>
-	<span>
-		<img data-hover-target=load_foot id=foot-pic class="pic-icon img-circle" src="<?php echo $condition_foot_url ?>" alt="<?php echo $condition_foot_url ?>">
+	<span class="cond-loader" id="cond-foot">
+		<img id=foot-pic class="pic-icon img-circle" src="<?php echo $condition_foot_url ?>" alt="<?php echo $condition_foot_url ?>">
 	</span>
 	</div>
 
+	<div id="conditions_treated_intro">
 	<?php echo $conditions_treated_intro ?>
-
 	</div>
+	<!-- Conditions Slides -->
+		
+	<div class="cond-div">
+
+		<p>&nbsp;</p>
+
+		<div id="cond-back-content">
+			
+			<div class="external-content" id="loaded-html">
+				<div class="col-sm-7 hidden-xs">
+				<figure class="vignette overlay">
+					<img src="<?php echo $condition_back_url?>" />
+				</figure>
+				</div>
+				<div class="col-xs-4 visible-xs conditions-pic">
+					<img class="pull-left pic-icon pic-icon-nopad img-circle" src="<?php echo $condition_back_url?>" />
+				</div>
+				<div class="col-sm-5 col-xs-8 conditions-list">
+					<h3>Back Pain</h3>
+					<ul>
+						<li>Low Back Pain</li>
+						<li>Herniated Discs</li>
+						<li>Stenosis</li>
+						<li>Sciatica</li>
+						<li>Post-op</li>
+						<li>Strains/Sprains</li>
+						<li>Fractures</li>
+						<li>Spondylolisthesis/Spondylosis</li>
+						<li>Sacroiliac dysfunction</li>
+						<li>Subluxed Ribs</li>
+						<li>Laminectomy</li>
+						<li>Discectomy</li>
+						<li>Spinal Fusion</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div id="cond-neck-content">
+				
+			<div class="external-content" id="loaded-html">
+				<div class="col-sm-7 hidden-xs">
+					<figure class="vignette overlay">
+						<img src="<?php echo $condition_neck_url?>" />
+					</figure>
+				</div>
+				<div class="col-xs-4 visible-xs conditions-pic">
+					<img class="pull-left pic-icon pic-icon-nopad img-circle" src="<?php echo $condition_neck_url?>" />
+				</div>
+				<div class="col-sm-5 col-xs-8 conditions-list">
+					<h3>Neck / Head</h3>
+					<ul>
+						<li>Neck Pain</li>
+						<li>Herniated Discs</li>
+						<li>Stenosis</li>
+						<li>Muscle stiffness</li>
+						<li>Strains/Sprains</li>
+						<li>Cervicogenic headache</li>
+						<li>Temperomandibular Joint Pain</li>
+						<li>Postural Dysfunction</li>
+						<li>Vestibular Dysfunction</li>
+						<li>Post-Surgical</li>
+						<li>Cervical Fusion</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="cond-shoulder-content">
+			<div class="external-content" id="loaded-html">
+			<div class="col-sm-7 hidden-xs">
+			<figure class="vignette overlay">
+				<img src="<?php echo $condition_shoulder_url?>" />
+			</figure>
+			</div>
+			<div class="col-xs-4 visible-xs conditions-pic">
+				<img class="pull-left pic-icon pic-icon-nopad img-circle" src="<?php echo $condition_shoulder_url?>" />
+				</div>
+				<div class="col-sm-5 col-xs-8 conditions-list">
+					<h3>Shoulder</h3>
+					<ul>
+						<li>Shoulder Pain</li>
+						<li>Rotator Cuff Strains/Tears</li>
+						<li>Labral Tears</li>
+						<li>Post-Surgical</li>
+						<li>Adhesive Capsulitis (Frozen Shoulder)</li>
+						<li>Tendonitis/Tendonosis</li>
+						<li>Impingement</li>
+						<li>Dislocation/Instability</li>
+						<li>Fractures (humeral, scapular, clavicular)</li>
+						<li>Acromioclavicular (AC) Joint Separation</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="cond-elbow-content">
+			<div class="col-sm-7 hidden-xs">
+				<figure class="vignette overlay">
+				<img src="<?php echo $condition_elbow_url?>">
+				</figure>
+			</div>
+			<div class="col-xs-4 visible-xs conditions-pic">
+			<img class="pull-left pic-icon pic-icon-nopad img-circle" src="<?php echo $condition_elbow_url?>">
+			</div>
+			<div class="col-sm-5 col-xs-8 conditions-list">
+				<h3>Elbow/Wrist/Hands</h3>
+				<ul>
+					<li>Elbow/Wrist Fractures</li>
+					<li>Hand/Finger/Thumb Fractures</li>
+					<li>Carpal Tunnel Syndrome</li>
+					<li>Tennis/Golfer's Elbow</li>
+					<li>Post-Surgical</li>
+					<li>Osteoarthritis</li>
+					<li>Sprains/Strains</li>
+					<li>Nerve Injuries</li>
+					<li>Dupuytren's Contracture</li>
+					<li>De Quervain's Syndrome</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="cond-hip-content">
+			<div class="external-content" id="loaded-html">
+				<div class="col-sm-7 hidden-xs">
+					<figure class="vignette overlay">
+						<img src="<?php echo $condition_hip_url?>">
+					</figure>
+				</div>
+				<div class="col-xs-4 visible-xs conditions-pic">
+					<img class="pic-icon pic-icon-nopad img-circle" src="<?php echo $condition_hip_url?>">
+				</div>
+				<div class="col-sm-5 col-xs-7 conditions-list">
+					<h3>Hip</h3>
+					<ul>
+						<li>Muscle Strains</li>
+						<li>Tendonitis </li>
+						<li>Trochanteric Bursitis</li>
+						<li>Osteoarthritis</li>
+						<li>Labral Tears</li>
+						<li>Hip Replacement</li>
+						<li>Piriformis Syndrome</li>
+						<li>Impingement</li>
+						<li>Fractures</li>
+						<li>Avascular Necrosis</li>
+						<li>Post-Surgical</li>
+						<li>Bursitis</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div id="cond-knee-content">
+			<div class="external-content" id="loaded-html">
+				<div class="col-sm-7 hidden-xs">
+					<figure class="vignette overlay">
+						<img src="<?php echo $condition_knee_url?>" width="80%" />
+					</figure>
+				</div>
+				<div class="col-xs-4 visible-xs conditions-pic">
+					<img class="pull-left pic-icon pic-icon-nopad img-circle" src="<?php echo $condition_knee_url?>" width="80%" />
+				</div>
+				<div class="col-sm-5 col-xs-8 conditions-list">
+					<h3>Knee</h3>
+					<ul>
+						<li>Patellofemoral Pain</li>
+						<li>Iliotibial Band Syndrome</li>
+						<li>Chondromalacia</li>
+						<li>Running Injuries</li>
+						<li>ACL Reconstruction</li>
+						<li>Meniscal Tears</li>
+						<li>Ligament Injuries</li>
+						<li>Muscle Strains</li>
+						<li>Tendonitis </li>
+						<li>Knee Osteoarthritis</li>
+						<li>Knee Replacement</li>
+						<li>Osteochondritis Dissecans</li>
+						<li>Osgood-Schlatter Disease</li>
+						<li>Baker's Cyst</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="cond-foot-content">	
+			<div class="external-content" id="loaded-html">
+				<div class="col-sm-7 hidden-xs">
+					<figure class="vignette overlay">
+						<img src="<?php echo $condition_foot_url?>">
+					</figure>
+				</div>
+				<div class="col-xs-4 visible-xs conditions-pic">
+					<img class="pull-left pic-icon pic-icon-nopad img-circle" src="<?php echo $condition_foot_url?>">
+					</div>
+					<div class="col-sm-5 col-xs-8 conditions-list">
+						<h3>Foot/Ankle</h3>
+						<ul>
+							<li>Plantar Fasciitis</li>
+							<li>Ankle Sprains/Strains</li>
+							<li>Anterior &amp; Posterior Shin Splints</li>
+							<li>Posterior Tibialis Insufficiency</li>
+							<li>Tendonitis</li>
+							<li>Running Injuries</li>
+							<li>Heel Spurs</li>
+							<li>Stress Fractures</li>
+							<li>Hallux Rigidus</li>
+							<li>Neuromas</li>
+							<li>Tarsal Tunnel Syndrome</li>
+							<li>Bunions/Hallux Valgus</li>
+							<li>Hallux Rigidus</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div>	
+</div>
+	
 <div class=row>
    <div class=conditions-content-box id=conditions-content></div>
 </div>
